@@ -18,7 +18,6 @@ consumer = KafkaConsumer('mqtt-topic',enable_auto_commit=True,group_id="mqtt_gro
 def insert_hbase(raw_data, cf_name):
     now = datetime.datetime.now().strftime('%Y%m%d%H%M%S%f')
     ps_data = json_hbase.parse_jsonarr(raw_data)
-    print("ps_data : "+ str(ps_data))
     data = json_hbase.parse_jsonToHbase(ps_data, cf_name)
     connection = happybase.Connection('master', table_prefix='sensor', table_prefix_separator=table_prefix_sap)
     connection.open()
@@ -30,7 +29,6 @@ print('start')
 while True:
     for msg in consumer:
         print(msg)
-        #print(str(msg.value)[1:])
         ss = str(msg.value)[1:]
 #		consumer.commit()
         insert_hbase(str(msg.value)[1:],"data")

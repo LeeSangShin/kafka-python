@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/kafka-python.iml" filepath="$PROJECT_DIR$/.idea/kafka-python.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/ras.iml" filepath="$PROJECT_DIR$/.idea/ras.iml" />
     </modules>
   </component>
 </project>
